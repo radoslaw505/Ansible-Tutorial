@@ -1,0 +1,13 @@
+---
+- hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: Creating file with ansible module
+      file:
+        path: /tmp/new_file_ansible.txt
+        state: touch
+
+    - name: Create file with shell command
+      shell: touch /tmp/new_file_shell.txt
+      

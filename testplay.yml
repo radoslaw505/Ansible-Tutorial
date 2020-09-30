@@ -1,0 +1,13 @@
+---
+- hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: Installing mc
+      action: >
+        {{ ansible_pkg_mgr }} name=mc state=present update_cache=yes
+
+    - name: Create file
+      file:
+        path: /tmp/nowyplik.txt
+        state: touch

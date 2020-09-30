@@ -1,0 +1,10 @@
+- hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: Adding user to the system
+      user:
+        name: radoslaw
+        shell: /bin/bash
+        groups: adm
+        append: yes
